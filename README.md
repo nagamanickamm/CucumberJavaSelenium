@@ -29,7 +29,7 @@ Further enhancements:
 2. Further, cloud based AI reporting can be added using ReportPortal IO
 3. CI CD can be setup easily with gradle options
 4. Environment config file can be further enhanced to switch between multiple environments
-5. Passwords can be set using secret key such as in Jenkins configurations
+5. Passwords should be secretly stored/ given during runtime using gradle parameter and can be set using secret key such as in Jenkins configurations
 6. Use API calls to generate Test Data
 7. Use Example option on cucumber to add Data driven test
 8. Add @<tag> annotations to run only selected area of features
