@@ -12,8 +12,7 @@ Code Structure:
 Setup & test:
 1. Install Gradle on your machine https://gradle.org/install/
 2. Download remote repository git@github.com:nagamanickamm/CucumberJavaSelenium.git 
-3. Open the project and select build.gradle using your choice of IDE (Note: This project is build using IntelliJ)
-   Import the project as gradle project
+3. Open the project using your choice of IDE (Note: This project is build using IntelliJ and do not open via build.gradle)
 4. Go to Terminal, from project root (ex:'CucumberJavaSelenium') and enter "gradle --refresh-dependencies" (without quotes)
 5. type "gradle cucumber -Pbrowser=firefox" (change your browser accordingly) 
 6. When the test is a completed click on the cucumber report link shown in the terminal 
@@ -37,3 +36,4 @@ Further enhancements:
 9. Add more validations for each page (Due to time constraint I could not validate every element)
 10. Enable Parallel runs across test and browser
 12. Crossbrowser platforms such as Selenoid, Saucelabs, Browserstacks can be added
+13. Gradle should be placed at the root rather than module level to import as gradle project(I realised at the middle of testing) 
