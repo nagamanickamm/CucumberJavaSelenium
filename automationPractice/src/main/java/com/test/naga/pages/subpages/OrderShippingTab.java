@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.locators.RelativeLocator;
 
+import java.util.List;
+
 public class OrderShippingTab extends PageBase {
     //_______________________Contents/WebElements____________________________
     @FindBy(css = ".step_current.four")
@@ -20,10 +22,10 @@ public class OrderShippingTab extends PageBase {
     @FindBy(name = "processCarrier")
     private WebElement proceedCheckoutButton;
     //_______________________Actions/Methods____________________________
-    public void verifyShippingDetails(WebDriver driver) {
-        Assert.assertEquals("04. Shipping", tabName.getText());
-        Assert.assertEquals("$2.00", deliveryPrice.getText() );
-        Assert.assertEquals("My carrier", myCarrierLabel.getText() );
+    public void verifyShippingDetails(WebDriver driver, String name, List<String> details) {
+        Assert.assertEquals(name, tabName.getText());
+        Assert.assertEquals(details.get(0), deliveryPrice.getText() );
+        Assert.assertEquals(details.get(1), myCarrierLabel.getText() );
     }
     public void setAgreeBoxAndProceedNext(){
         agreeBox.click();

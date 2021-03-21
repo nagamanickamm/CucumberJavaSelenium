@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class OrderPaymentTab extends PageBase {
     //_______________________Contents/WebElements____________________________
     @FindBy(id = "step_end")
@@ -38,9 +40,9 @@ public class OrderPaymentTab extends PageBase {
     @FindBy(css = ".page-subheading")
     private WebElement bankWirePaymentHeading;
     //_______________________Actions/Methods____________________________
-    public void verifyAcknowledgement() {
-        Assert.assertEquals(acknowledgementTitle.getText(), "Your order on My Store is complete.");
-        Assert.assertEquals(price.getText(), "$18.51");
+    public void verifyAcknowledgement(List<String> details) {
+        Assert.assertEquals(acknowledgementTitle.getText(), details.get(0));
+        Assert.assertEquals(price.getText(), details.get(1));
     }
     public void proceedPayment(){
         bankWireTransfer.click();
@@ -48,15 +50,15 @@ public class OrderPaymentTab extends PageBase {
         Assert.assertEquals(bankWirePaymentHeading.getText(), "BANK-WIRE PAYMENT.");
         confirmButton.click();
     }
-    public void verifyItemSummary(){
-        Assert.assertEquals("05. Payment", tabName.getText());
-        Assert.assertEquals("Faded...", productName.getAttribute("innerHTML"));
-        Assert.assertEquals("In stock", availability.getText());
-        Assert.assertEquals("1", cartQty.getText());
-        Assert.assertEquals("$16.51", unitPrice.getText());
-        Assert.assertEquals("$16.51", cartTotal.getText());
-        Assert.assertEquals("$16.51", totalProductPrice.getText());
-        Assert.assertEquals("$2.00", totalDeliveryCost.getText());
-        Assert.assertEquals("$18.51", netTotal.getText());
+    public void verifyItemSummary(String name , List<String> details){
+        Assert.assertEquals(name, tabName.getText());
+        Assert.assertEquals(details.get(0), productName.getAttribute("innerHTML"));
+        Assert.assertEquals(details.get(1), availability.getText());
+        Assert.assertEquals(details.get(2), cartQty.getText());
+        Assert.assertEquals(details.get(3), unitPrice.getText());
+        Assert.assertEquals(details.get(4), cartTotal.getText());
+        Assert.assertEquals(details.get(5), totalProductPrice.getText());
+        Assert.assertEquals(details.get(6), totalDeliveryCost.getText());
+        Assert.assertEquals(details.get(7), netTotal.getText());
     }
 }

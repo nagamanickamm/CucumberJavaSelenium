@@ -40,7 +40,7 @@ task cucumberTest() {
     doLast {
         javaexec {
             main = "io.cucumber.core.cli.Main"
-//            systemProperties['configFileName'] = "env0_config.properties"
+            // systemProperties['configFileName'] = "env0_config.properties" (this is required for changing the environment in future)
             systemProperties['browser'] = browser
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = ['--plugin', 'pretty', '--glue', 'com.test.naga', 'src/test/resources']

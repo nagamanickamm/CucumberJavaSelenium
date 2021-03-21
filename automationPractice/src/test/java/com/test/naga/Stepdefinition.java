@@ -102,8 +102,9 @@ public class Stepdefinition extends WebSiteBase {
     }
 
     @Then("Im on Order Shipping Page named {string}")
-    public void im_on_order_shipping_page_named(String string, io.cucumber.datatable.DataTable dataTable) {
-        orderShippingTab.verifyShippingDetails(driver);
+    public void im_on_order_shipping_page_named(String name, io.cucumber.datatable.DataTable dataTable) {
+        List<String> details = dataTable.asList();
+        orderShippingTab.verifyShippingDetails(driver, name, details);
     }
 
     @When("I Proceed to Payments Page")
@@ -112,8 +113,9 @@ public class Stepdefinition extends WebSiteBase {
     }
 
     @Then("Im on Order Payments Page named {string}")
-    public void im_on_order_payments_page_named(String string, io.cucumber.datatable.DataTable dataTable) {
-        orderPaymentTab.verifyItemSummary();
+    public void im_on_order_payments_page_named(String name, io.cucumber.datatable.DataTable dataTable) {
+        List<String> details = dataTable.asList();
+        orderPaymentTab.verifyItemSummary(name, details);
     }
 
     @When("I complete the Payment")
@@ -123,7 +125,8 @@ public class Stepdefinition extends WebSiteBase {
 
     @Then("Im on Order Acknowledgement Page")
     public void im_on_order_acknowledgement_page(io.cucumber.datatable.DataTable dataTable) {
-        orderPaymentTab.verifyAcknowledgement();
+        List<String> details = dataTable.asList();
+        orderPaymentTab.verifyAcknowledgement(details);
     }
 
     @When("I go back to MyAccounts")

@@ -30,13 +30,12 @@ public class OrderAddressTab extends PageBase {
     public void proceedNext(WebDriver driver){
         executeJavaScript(driver, proceedCheckoutButton);
     }
-    public void verifyAddressInfo(WebDriver driver, String string, List<String> details) {
-       // Assert.assertEquals(tabName.getText(), "03. Address");
-        Assert.assertEquals("Test Address", addressDropDown.getText() );
-        Assert.assertEquals("1", useSameAddress.getAttribute("value"));
-        Assert.assertEquals("YOUR DELIVERY ADDRESS",deliveryAddressTitle.getText());
+    public void verifyAddressInfo(WebDriver driver, String name, List<String> details) {
+        Assert.assertEquals("Test Address", details.get(0) );
+        Assert.assertEquals("1", details.get(1) );
+        Assert.assertEquals("YOUR DELIVERY ADDRESS",details.get(2) );
         Assert.assertTrue(deliveryUpdateButton.isDisplayed());
-        Assert.assertEquals("YOUR BILLING ADDRESS",invoiceAddressTitle.getText());
+        Assert.assertEquals("YOUR BILLING ADDRESS",details.get(3) );
         Assert.assertTrue(invoiceUpdateButton.isDisplayed());
     }
     public void waitForAddress(WebDriver driver) {

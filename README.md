@@ -12,9 +12,10 @@ Code Structure:
 Setup & test:
 1. Install Gradle on your machine https://gradle.org/install/
 2. Download remote repository git@github.com:nagamanickamm/CucumberJavaSelenium.git 
-3. Open the project using your choice of IDE (Note: This project is build using IntelliJ)
-4. Go to Terminal and enter "gradle --refresh-dependencies" (without quotes)
-5. type "gradle cucumber -Pbrowser=firefox" (change your browser accordingly)
+3. Open the project and select build.gradle using your choice of IDE (Note: This project is build using IntelliJ)
+   Import the project as gradle project
+4. Go to Terminal, from project root (ex:'CucumberJavaSelenium') and enter "gradle --refresh-dependencies" (without quotes)
+5. type "gradle cucumber -Pbrowser=firefox" (change your browser accordingly) 
 6. When the test is a completed click on the cucumber report link shown in the terminal 
    or go to https://reports.cucumber.io/report-collections/ece07264-f966-43d8-8e1d-b39b14c7f1e1
 7. Alternatively you can execute from run command in intelliJ or any iDE, please add -Dbrowser=firefox in VM options

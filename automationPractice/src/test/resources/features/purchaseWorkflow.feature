@@ -34,7 +34,7 @@ Feature: Customer purchase and order workflow
       | +14082578902                    |
       | 7778707446                      |
       # Billing address
-      | INVOICE ADDRESS (TEST ADDRESS) |
+      | INVOICE ADDRESS (TEST ADDRESS)  |
       | Nagamanickam Mani               |
       | 5574 Greenoak Dr                |
       | San Jose, California 95129      |
@@ -42,37 +42,25 @@ Feature: Customer purchase and order workflow
       | 7778707446                      |
     When I Proceed to Address Page
     Then Im on Order Address Page named "03. Address"
-      | Test Address               |
-      | 1                          |
-      | YOUR DELIVERY ADDRESS      |
-      | Nagamanickam Mani          |
-      | 5574 Greenoak Dr           |
-      | San Jose, California 95129 |
-      | United States              |
-      | +14082578902               |
-      | 7778707446                 |
-      | YOUR BILLING ADDRESS       |
-      | Nagamanickam Mani          |
-      | 5574 Greenoak Dr           |
-      | San Jose, California 95129 |
-      | United States              |
-      | +14082578902               |
-      | 7778707446                 |
+      | Test Address          |
+      | 1                     |
+      | YOUR DELIVERY ADDRESS |
+      | YOUR BILLING ADDRESS  |
     When I Proceed to Shipping Page
     Then Im on Order Shipping Page named "04. Shipping"
-      | $2.00                         |
-      | My carrier Delivery next day! |
+      | $2.00      |
+      | My carrier |
     When I Proceed to Payments Page
     Then Im on Order Payments Page named "05. Payment"
-      | Faded Short Sleeve T-shirts |
-      | In stock                    |
-      | 1                           |
-      | $16.51                      |
-      | $16.51                      |
+      | Faded... |
+      | In stock |
+      | 1        |
+      | $16.51   |
+      | $16.51   |
       # Final Total
-      | $16.51                      |
-      | $2.00                       |
-      | $18.51                      |
+      | $16.51   |
+      | $2.00    |
+      | $18.51   |
     When I complete the Payment
     Then Im on Order Acknowledgement Page
       | Your order on My Store is complete. |
