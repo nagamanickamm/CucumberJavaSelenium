@@ -21,7 +21,8 @@ Setup & test:
 8. If you have any issues with browser parameter then please comment systemProperties['browser'] = browser in build.gradle and it should take from properties file
 Notes:
 - Sample report can be found in report/Cucumber Reports.pdf or
-- Cloud report sample - https://reports.cucumber.io/report-collections/ece07264-f966-43d8-8e1d-b39b14c7f1e1
+- Cloud report sample - https://reports.cucumber.io/reports/c86cd05e-4745-4100-9855-429710e929a3
+  https://reports.cucumber.io/report-collections/ece07264-f966-43d8-8e1d-b39b14c7f1e1  (Check reports created only on sunday)
 
 
 Further enhancements:
